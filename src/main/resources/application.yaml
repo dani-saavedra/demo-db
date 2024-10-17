@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: pruebadb
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:mysql://${DB_HOST}:3306/u117615979_demodb
+    username: u117615979_demodb
+    password: ${DB_PASS}
+    #hikari:
+     # maximum-pool-size: 100
+      #minimum-idle: 100
+
