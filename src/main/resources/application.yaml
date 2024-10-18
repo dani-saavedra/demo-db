@@ -11,4 +11,6 @@ spring:
     #hikari:
      # maximum-pool-size: 100
       #minimum-idle: 100
+db:
+  pass: ${DB_PASS}
 
