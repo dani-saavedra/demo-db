@@ -9,3 +9,13 @@ vs Drivermanager.getConnection
 
 ### Resultados con 5 usuario concurrentes
 ![5_users.png](results%2F5_users.png)
+
+
+## Tecnologias
+
+* Mysql 8.0.39
+* Java 17
+* Newrelic 
+
+Comando:
+java -javaagent:/Users/danielsaavedra/Documentos/arquitectura/newrelic/newrelic.jar -jar pruebadb-0.0.1-SNAPSHOT.jar
