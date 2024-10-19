@@ -26,8 +26,8 @@ public class TransactionService {
         sourceAccount.setBalance(sourceAccount.getBalance() - amount);
         destinationAccount.setBalance(destinationAccount.getBalance() + amount);
 
-        accountRepository.save(sourceAccount);
-        accountRepository.save(destinationAccount);
+        //accountRepository.save(sourceAccount);
+        //accountRepository.save(destinationAccount);
 
         Transaction transaction = new Transaction();
         transaction.setSourceAccount(sourceAccount);
