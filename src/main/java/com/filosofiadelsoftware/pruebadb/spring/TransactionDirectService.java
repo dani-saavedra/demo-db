@@ -15,11 +15,13 @@ public class TransactionDirectService {
     private String url;
     @Value("${db.pass}")
     private String pass;
+    @Value("${db.user}")
+    private String user;
 
     public Transaction createTransaction(String sourceAccountNumber, String destinationAccountNumber, double amount) throws SQLException {
         Connection connection = null;
         try {
-            connection = DriverManager.getConnection(url, "u117615979_demodb", pass);
+            connection = DriverManager.getConnection(url, user, pass);
             connection.setAutoCommit(false);
 
             Account sourceAccount = findAccountByNumber(connection, sourceAccountNumber);

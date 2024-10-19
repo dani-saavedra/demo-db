@@ -13,4 +13,5 @@ spring:
       #minimum-idle: 100
 db:
   pass: ${DB_PASS}
+  user: ${DB_USER}
 
