@@ -42,8 +42,8 @@ public class TransactionDirectService {
             //updateAccountBalance(connection, destinationAccountNumber, destinationAccount.getBalance() + amount);
 
             Transaction transaction = new Transaction();
-            transaction.setSourceAccount(sourceAccount);
-            transaction.setDestinationAccount(destinationAccount);
+            transaction.setSourceAccount(sourceAccount.getId());
+            transaction.setDestinationAccount(destinationAccount.getId());
             transaction.setAmount(amount);
             transaction.setTransactionDate(LocalDateTime.now());
 
@@ -92,8 +92,8 @@ public class TransactionDirectService {
     private void saveTransaction(Connection connection, Transaction transaction) throws SQLException {
         String insertQuery = "INSERT INTO transaction (source_account_id, destination_account_id, amount, transaction_date) VALUES (?, ?, ?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(insertQuery)) {
-            stmt.setLong(1, transaction.getSourceAccount().getId());
-            stmt.setLong(2, transaction.getDestinationAccount().getId());
+            stmt.setLong(1, transaction.getSourceAccount());
+            stmt.setLong(2, transaction.getDestinationAccount());
             stmt.setDouble(3, transaction.getAmount());
             stmt.setObject(4, transaction.getTransactionDate());
             stmt.executeUpdate();

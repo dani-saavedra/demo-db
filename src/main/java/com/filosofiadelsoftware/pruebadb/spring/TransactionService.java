@@ -32,8 +32,8 @@ public class TransactionService {
         accountRepository.save(destinationAccount);
 
         Transaction transaction = new Transaction();
-        transaction.setSourceAccount(sourceAccount);
-        transaction.setDestinationAccount(destinationAccount);
+        transaction.setSourceAccount(sourceAccount.getId());
+        transaction.setDestinationAccount(destinationAccount.getId());
         transaction.setAmount(amount);
         transaction.setTransactionDate(LocalDateTime.now());
 
