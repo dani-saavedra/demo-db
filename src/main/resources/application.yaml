@@ -12,6 +12,7 @@ spring:
       maximum-pool-size: 5 #maximo conexion abrir
       minimum-idle: 2 #minimo conexiones abrir
       idleTimeout: 300000 # 5 minutos que puede estar en espera antes de cerrar la conexion
+      connection-timeout: 100000
 db:
   pass: ${DB_PASS}
   user: ${DB_USER}

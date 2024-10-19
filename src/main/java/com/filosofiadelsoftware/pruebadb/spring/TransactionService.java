@@ -2,11 +2,13 @@ package com.filosofiadelsoftware.pruebadb.spring;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
 @Service
 @AllArgsConstructor
+@Transactional(timeout = 100)
 public class TransactionService {
 
     private final AccountRepository accountRepository;
@@ -26,8 +28,8 @@ public class TransactionService {
         sourceAccount.setBalance(sourceAccount.getBalance() - amount);
         destinationAccount.setBalance(destinationAccount.getBalance() + amount);
 
-        //accountRepository.save(sourceAccount);
-        //accountRepository.save(destinationAccount);
+        accountRepository.save(sourceAccount);
+        accountRepository.save(destinationAccount);
 
         Transaction transaction = new Transaction();
         transaction.setSourceAccount(sourceAccount);
