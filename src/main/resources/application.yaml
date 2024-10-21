@@ -9,7 +9,7 @@ spring:
     username: ${DB_USER}
     password: ${DB_PASS}
     hikari:
-      maximum-pool-size: 5 #maximo conexion abrir
+      maximum-pool-size: 10 #maximo conexion abrir
       minimum-idle: 2 #minimo conexiones abrir
       idleTimeout: 300000 # 5 minutos que puede estar en espera antes de cerrar la conexion
       connection-timeout: 100000
