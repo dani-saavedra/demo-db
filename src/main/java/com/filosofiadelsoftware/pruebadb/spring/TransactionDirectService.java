@@ -38,8 +38,8 @@ public class TransactionDirectService {
                 throw new RuntimeException("Insufficient balance");
             }
 
-            //updateAccountBalance(connection, sourceAccountNumber, sourceAccount.getBalance() - amount);
-            //updateAccountBalance(connection, destinationAccountNumber, destinationAccount.getBalance() + amount);
+            updateAccountBalance(connection, sourceAccountNumber, sourceAccount.getBalance() - amount);
+            updateAccountBalance(connection, destinationAccountNumber, destinationAccount.getBalance() + amount);
 
             Transaction transaction = new Transaction();
             transaction.setSourceAccount(sourceAccount.getId());
