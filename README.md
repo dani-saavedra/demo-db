@@ -10,6 +10,7 @@ vs Drivermanager.getConnection
 ### Resultados con 5 usuario concurrentes
 ![5_users.png](results%2F5_users.png)
 
+## Java & Mysql en  servidores diferentes
 
 ## Tecnologias
 
