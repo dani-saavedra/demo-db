@@ -15,7 +15,7 @@ public class TransactionDirectService {
     private String url;
     @Value("${db.pass}")
     private String pass;
-    @Value("${db.user}")
+    @Value("${db.user_direct}")
     private String user;
 
     public Transaction createTransaction(String sourceAccountNumber, String destinationAccountNumber, double amount) throws SQLException {

@@ -21,4 +21,5 @@ spring:
 db:
   pass: ${DB_PASS}
   user: ${DB_USER}
+  user_direct: link_direct
 
