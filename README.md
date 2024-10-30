@@ -6,7 +6,7 @@ vs Drivermanager.getConnection
 ### Resultados con 1 usuario concurrente
 ![1_user.png](results%2F1_user.png)
 
-### Resultados con 5 usuario concurrentes
+### Resultados con 5 usuario concurrentess
 
 ![5_users.png](results%2F5_users.png)
 
