@@ -12,6 +12,21 @@ vs Drivermanager.getConnection
 
 ## Java & Mysql en  servidores diferentes
 
+### Resultados con 5 usuario concurrentes
+
+![5_User_different_server.png](results%2F5_User_different_server.png)
+
+### Resultados con 10 usuario concurrentes
+![10_User_different_server.png](results%2F10_User_different_server.png)
+
+## Analisis
+Como se observa en los gráficos anteriores el trabajar con direct connection a través del drivermanager no hace ninguna diferencia a hacerlo con un pool de conexiones
+manejado en este caso por hikari. Esto se debe a que el tiempo que se requiere para hacer la conexión es practicamente nula al estar dentro del mismo server.
+
+Sin embargo, los datos cambian completamente cuando la aplicación java se encuentra ejecutandose en un servidor diferente al de la base de datos, acá observamos como el tiempo 
+incrementa en un 155% en comparación de usar un pool de conexiones. Aunque los tiempos aumentan al incrementar el número de usuarios, el crecimiento del tiempo del pool de conexiones
+vs conexión directa se mantiene en 155% de diferencia
+
 ## Tecnologias
 
 * Mysql 8.0.39
