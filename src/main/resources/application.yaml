@@ -23,3 +23,15 @@ db:
   user: ${DB_USER}
   user_direct: link_direct
 
+prueba:
+  datasource:
+    primary:
+      url: jdbc:mysql://localhost:3306/primary_db
+      username: user_primary
+      password: pass_primary
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    secondary:
+      url: jdbc:mysql://localhost:3306/secondary_db
+      username: user_secondary
+      password: pass_secondary
+      driver-class-name: com.mysql.cj.jdbc.Driver
