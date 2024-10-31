@@ -23,8 +23,8 @@ Como se observa en los gráficos anteriores el trabajar con direct connection a 
 manejado en este caso por hikari. Esto se debe a que el tiempo que se requiere para hacer la conexión es practicamente nula al estar dentro del mismo server.
 
 Sin embargo, los datos cambian completamente cuando la aplicación java se encuentra ejecutandose en un servidor diferente al de la base de datos, acá observamos como el tiempo 
-incrementa en un 155% en comparación de usar un pool de conexiones. Aunque los tiempos aumentan al incrementar el número de usuarios, el crecimiento del tiempo del pool de conexiones
-vs conexión directa se mantiene en 155% de diferencia
+incrementa en un 70% en comparación de usar un pool de conexiones. Aunque los tiempos aumentan al incrementar el número de usuarios, el crecimiento del tiempo del pool de conexiones
+vs conexión directa se mantiene en 70% de diferencia
 
 ## Tecnologias
 
