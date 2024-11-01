@@ -1,5 +1,8 @@
 # Performance Spring jpa (hikari) vs DriverManager
 
+Para comparar el perfomance de trabajar con Hikari o DriverManager(conexión directa sin pool) se tendrán dos tipos de muestras diferentes. Una donde esten la aplicación java y la base de datos en el mismo servidor
+y otra donde la aplicación java y la base de datos están en servidores distintos.
+
 ## Java & Mysql en el mismo servidor 
 Comparacíon de resultados de usar spring jpa con hikari por (defecto 10 connection pool)
 vs Drivermanager.getConnection
