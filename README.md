@@ -4,8 +4,7 @@
 Comparacíon de resultados de usar spring jpa con hikari por (defecto 10 connection pool)
 vs Drivermanager.getConnection
 ### Resultados con 1 usuario concurrente
-
-![1_user_same_server.png](results%2F1_user_same_server.png)
+![1_user__same_server.png](results%2F1_user__same_server.png)
 ### Resultados con 5 usuario concurrentes
 ![5_users__same_server.png](results%2F5_users__same_server.png)
 
