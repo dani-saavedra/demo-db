@@ -21,8 +21,9 @@ vs Drivermanager.getConnection
 ![10_User_different_server.png](results%2F10_User_different_server.png)
 
 ## Analisis
-Como se observa en los gráficos anteriores el trabajar con conectandose directamente a la base de datos cada vez que se necesite hacer una operación, es decir, sin pool de conexiones 
-no hace ninguna diferencia siempre y cuando se este trabajando la base de datos y la aplicación en el mismo servidor fisico. Esto se debe a que el tiempo que se requiere para hacer la conexión (por TCP) es practicamente nula al estar dentro del mismo server.
+Como se puede ver en los gráficos anteriores, al trabajar en el mismo server, no hace diferencia el conectarse a la base de datos
+a través de un pool de conexiones o abrir/cerrar conexión cada que se necesite la base de datos.
+Esto se debe a que el tiempo que se requiere para hacer la conexión (por TCP) es practicamente nula al estar dentro del mismo server.
 
 Sin embargo, los datos cambian completamente cuando la aplicación java se encuentra ejecutandose en un servidor diferente al de la base de datos, acá observamos como el tiempo 
 incrementa en un 70% en comparación de usar un pool de conexiones. Aunque los tiempos aumentan al incrementar el número de usuarios, el crecimiento del tiempo del pool de conexiones
