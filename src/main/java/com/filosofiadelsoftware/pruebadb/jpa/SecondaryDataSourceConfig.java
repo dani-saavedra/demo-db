@@ -12,7 +12,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 import javax.sql.DataSource;
 
-@Configuration
+//@Configuration
 @EnableJpaRepositories(
         basePackages = "com.example.secondary.repository", // Cambia esto a tu paquete de repositorios secundarios
         entityManagerFactoryRef = "secondaryEntityManagerFactory",
