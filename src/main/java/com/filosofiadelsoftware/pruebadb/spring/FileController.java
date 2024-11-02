@@ -1,5 +1,6 @@
 package com.filosofiadelsoftware.pruebadb.spring;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,7 @@ import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/api")
+@Slf4j
 public class FileController {
 
     private static final String FILE_PATH = "/Users/danielsaavedra/temporal/output.txt";
@@ -21,20 +23,16 @@ public class FileController {
     public String addStringToFile(@RequestBody String input) {
         try {
             File file = new File(FILE_PATH);
-            // Si el archivo no existe, lo crea
             if (!file.exists()) {
                 file.createNewFile();
             }
-
-            // Escribe en el archivo, añadiendo la fecha y el contenido recibido
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
                 String content = "Fecha: " + LocalDateTime.now() + " - Contenido: " + input + System.lineSeparator();
                 writer.write(content);
             }
-
             return "El contenido ha sido agregado al archivo.";
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error("error al agregar texto ", e);
             return "Ocurrió un error al agregar el contenido al archivo.";
         }
     }
