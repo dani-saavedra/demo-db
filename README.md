@@ -34,9 +34,9 @@ vs conexión directa se mantiene.
 
 ## Tecnologias
 
-* Mysql 8.0.39
-* Java 17
-* Newrelic 
+* Mysql 8.0.39: DB
+* Java 17 Backend
+* Newrelic como APM
 
 Comando:
 java -javaagent:/Users/danielsaavedra/Documentos/arquitectura/newrelic/newrelic.jar -jar pruebadb-0.0.1-SNAPSHOT.jar
