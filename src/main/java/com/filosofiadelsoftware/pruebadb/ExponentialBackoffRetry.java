@@ -9,7 +9,7 @@ import java.net.URL;
 @Slf4j
 public class ExponentialBackoffRetry {
 
-    private static final int MAX_ATTEMPTS = 5;
+    private static final int MAX_ATTEMPTS = 5
     private static final int INITIAL_DELAY_MS = 1000; // 1 segundo
 
     public static void main(String[] args) {
