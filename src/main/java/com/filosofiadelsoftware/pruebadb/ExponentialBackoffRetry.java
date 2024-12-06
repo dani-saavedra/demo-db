@@ -13,7 +13,7 @@ public class ExponentialBackoffRetry {
     private static final int INITIAL_DELAY_MS = 1000; // 1 segundo
 
     public static void main(String[] args) {
-        String url = "https://example.com/api";
+        String url = "http://example.com/api";
         int attempt = 1;
         int delay = INITIAL_DELAY_MS;
 
