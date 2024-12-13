@@ -24,7 +24,7 @@ jobs:
         name: Build & push Docker image
         with:
           image: danieludea28/examplek8s
-          tags: latest
+          tags: ${{ env.sha }}
           registry: docker.io
           dockerfile: Dockerfile
           username: danieludea28
