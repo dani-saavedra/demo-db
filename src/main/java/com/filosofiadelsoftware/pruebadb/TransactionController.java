@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.sql.SQLException;
 
 @RestController
-@RequestMapping("/api/v1/transaction")
+@RequestMapping("/api/v2/transaction")
 @AllArgsConstructor
 public class TransactionController {
 

@@ -20,4 +20,14 @@ jobs:
         uses: gradle/gradle-build-action@v2
       - name: Compilar con gradle
         run: ./gradlew build
+      - uses: mr-smithers-excellent/docker-build-push@v6
+        name: Build & push Docker image
+        with:
+          image: danieludea28/examplek8s
+          tags: latest
+          registry: docker.io
+          dockerfile: Dockerfile
+          username: danieludea28
+          password: ${{ secrets.CLAVE_DE_DOCKER }}
+
 
