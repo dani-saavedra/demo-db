@@ -2,8 +2,8 @@ spring:
   servlet:
     multipart:
       enabled: true
-      max-file-size: 10MB
-      max-request-size: 10MB
+      max-file-size: 30MB
+      max-request-size: 30MB
   application:
     name: pruebadb
   jpa:
@@ -14,8 +14,8 @@ spring:
     username: ${DB_USER}
     password: ${DB_PASS}
     hikari:
-      maximum-pool-size: 10 #maximo conexion abrir
-      minimum-idle: 5 #minimo conexiones abrir
+      #maximum-pool-size: 10 #maximo conexion abrir
+      #minimum-idle: 5 #minimo conexiones abrir
       idleTimeout: 300000 # 5 minutos que puede estar en espera antes de cerrar la conexion
       connection-timeout: 100000
 db:
@@ -35,3 +35,17 @@ prueba:
       username: user_secondary
       password: pass_secondary
       driver-class-name: com.mysql.cj.jdbc.Driver
+logging:
+  level:
+    org:
+      apache:
+        catalina:
+          core: DEBUG
+management:
+  endpoint:
+    metrics:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'

@@ -1,0 +1,5 @@
+1. Ordenar la adquisición de locks	Siempre adquirir recursos en el mismo orden en todos los hilos	Todos los hilos primero bloquean el archivo A, luego el B
+2. Usar tryLock() con timeout	Intentar adquirir el lock por un tiempo limitado. Si falla, liberar todo y reintentar	if (lock.tryLock(100, TimeUnit.MILLISECONDS))
+3. Evitar bloquear múltiples recursos a la vez	Si puedes, usa un solo lock para la sección crítica	En vez de bloquear dos listas, combínalas o sincroniza un método
+4. Diseñar con timeout o fallback	Si no puedes acceder al recurso en X tiempo, abortar o usar otra opción	Si no puedes guardar en el archivo, reintenta o guarda en caché
+5. Usar herramientas de concurrencia modernas	Como Semaphore, ExecutorService, CountDownLatch, etc.	Mejoran control y diseño de concurrencia

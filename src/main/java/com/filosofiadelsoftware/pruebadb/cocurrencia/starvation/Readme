@@ -1,0 +1,5 @@
+Cómo evitar el starvation
+Estrategia	Cómo ayuda
+✅ Fair locks (new ReentrantLock(true))	Asegura orden FIFO: quien pide primero, entra primero
+✅ Limitar prioridad de hilos	Evita que unos dominen sobre otros
+✅ Controlar el uso de recursos compartidos	Usar colas o semáforos para turnos

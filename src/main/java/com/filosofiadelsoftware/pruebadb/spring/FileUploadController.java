@@ -16,9 +16,7 @@ public class FileUploadController {
 
     @PostMapping("/upload")
     public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile file) {
-        if (file.isEmpty() || !file.getContentType().equals("application/pdf")) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Please upload a valid PDF file.");
-        }
+
 
         try {
             // Asegúrate de que el directorio exista

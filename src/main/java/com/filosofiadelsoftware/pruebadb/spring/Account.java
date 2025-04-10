@@ -18,5 +18,8 @@ public class Account {
     @Column(nullable = false)
     private double balance;
 
+    //@Version
+    private int version;
+
 }
 

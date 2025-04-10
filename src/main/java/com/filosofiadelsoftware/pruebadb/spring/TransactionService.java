@@ -1,20 +1,23 @@
 package com.filosofiadelsoftware.pruebadb.spring;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
 @Service
 @AllArgsConstructor
-@Transactional(timeout = 100)
+@Slf4j
 public class TransactionService {
 
     private final AccountRepository accountRepository;
 
     private final TransactionRepository transactionRepository;
 
+    @Transactional(isolation = Isolation.REPEATABLE_READ)
     public Transaction createTransaction(String sourceAccountNumber, String destinationAccountNumber, double amount) {
         Account sourceAccount = accountRepository.findByAccountNumber(sourceAccountNumber)
                 .orElseThrow(() -> new RuntimeException("Source account not found"));
